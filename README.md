@@ -4,15 +4,16 @@
 # Usage
 CommonHeadView为一个基本例子，可以自己实现IRefreshHeader接口来自定义自己的头部样式，以及动画。
 根据回调自己实现相应的效果。
-    /**
-     * 松手，头部隐藏后会回调这个方法
-     */
-    void reset();
+
 
     /**
      * 下拉出头部的一瞬间调用
      */
     void pull();
+    /**
+     * 松手，头部隐藏后会回调这个方法
+     */
+    void reset();
 
     /**
      * 正在刷新的时候调用
@@ -36,7 +37,7 @@ CommonHeadView为一个基本例子，可以自己实现IRefreshHeader接口来�
     void complete();
 
 # ScreenShots
-
+![] (https://github.com/465857721/ZRefreshLayout/blob/master/ScreenShots/common.gif)
 # TODO
 写几个比较常用的样式
 
