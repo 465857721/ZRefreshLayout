@@ -15,5 +15,8 @@ public class Utils {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
-
+    public static float dp2px_f(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return  (dpValue * scale + 0.5f);
+    }
 }

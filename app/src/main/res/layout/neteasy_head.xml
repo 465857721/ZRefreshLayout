@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:gravity="center"
+        android:background="#f0f0f0"
+        android:id="@+id/rl_head_before"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.kingsoft.zrefreshlayout.NetEasyBall
+                android:id="@+id/myball"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <TextView
+                android:text="loading"
+                android:id="@+id/tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#9a9a9a"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_finish"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cfe1f6"
+        android:gravity="center"
+        android:text="成功为您推荐10条新内容"
+        android:textColor="#7999ca"/>
+
+</LinearLayout>
