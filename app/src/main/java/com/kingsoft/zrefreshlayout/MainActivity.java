@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
 
+import com.kingsoft.zrefreshlayout.neteasy.NetEasyHeadView;
+
 public class MainActivity extends AppCompatActivity {
     RelativeLayout rl_main;
 
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             refreshLayout.refreshComplete();
                         }
-                    }, 3000);
+                    }, 5000);
                 }
             });
 //            CommonHeadView headView = new CommonHeadView(this);//最普通的

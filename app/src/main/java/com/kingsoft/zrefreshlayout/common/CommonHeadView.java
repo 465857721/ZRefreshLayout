@@ -1,10 +1,14 @@
-package com.kingsoft.zrefreshlayout;
+package com.kingsoft.zrefreshlayout.common;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.kingsoft.zrefreshlayout.IRefreshHeader;
+import com.kingsoft.zrefreshlayout.R;
+import com.kingsoft.zrefreshlayout.RefreshLayout;
 
 
 public class CommonHeadView extends RelativeLayout implements IRefreshHeader {

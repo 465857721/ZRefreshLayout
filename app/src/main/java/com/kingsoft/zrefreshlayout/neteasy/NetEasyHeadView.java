@@ -1,4 +1,4 @@
-package com.kingsoft.zrefreshlayout;
+package com.kingsoft.zrefreshlayout.neteasy;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -7,8 +7,13 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.kingsoft.zrefreshlayout.IRefreshHeader;
+import com.kingsoft.zrefreshlayout.R;
+import com.kingsoft.zrefreshlayout.RefreshLayout;
 
 
 public class NetEasyHeadView extends RelativeLayout implements IRefreshHeader {
@@ -22,7 +27,7 @@ public class NetEasyHeadView extends RelativeLayout implements IRefreshHeader {
     private NetEasyBall mNetEasyBall;
 
     private ObjectAnimator animatorCircle;// 外部圆环动画集合
-
+    private ObjectAnimator animatorPoint; //点的移动动画
     public NetEasyHeadView(Context context) {
         super(context);
         this.mContext = context;
@@ -78,18 +83,25 @@ public class NetEasyHeadView extends RelativeLayout implements IRefreshHeader {
     @Override
     public void refreshing() {
 //        tv_state.setText("正在刷新");
+        mNetEasyBall.setIsrefreshing(true);
         star();
     }
 
     private void star() {
         if (animatorCircle == null) {
             animatorCircle = ObjectAnimator.ofFloat(mNetEasyBall, "Ratio", 1, 0, 1);
-            animatorCircle.setDuration(1000);
+            animatorCircle.setDuration(800);
+            animatorCircle.setInterpolator(new LinearInterpolator());
             animatorCircle.setRepeatCount(ValueAnimator.INFINITE);
         }
-
+        if (animatorPoint == null) {
+            animatorPoint = ObjectAnimator.ofFloat(mNetEasyBall, "Ratio_l", 0, 1);
+            animatorPoint.setDuration(1000);
+            animatorPoint.setInterpolator(new LinearInterpolator());
+            animatorPoint.setRepeatCount(ValueAnimator.INFINITE);
+        }
+        animatorPoint.start();
         animatorCircle.start();
-
     }
 
 
@@ -138,8 +150,10 @@ public class NetEasyHeadView extends RelativeLayout implements IRefreshHeader {
 
     @Override
     public void complete() {
+        mNetEasyBall.setIsrefreshing(false);
         tv_state.setText("推荐完成");
         animatorCircle.cancel();
+        animatorPoint.cancel();
         rl_head_before.setVisibility(View.GONE);
         set.start();
     }

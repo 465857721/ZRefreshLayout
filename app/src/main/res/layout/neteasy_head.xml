@@ -14,7 +14,7 @@
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <com.kingsoft.zrefreshlayout.NetEasyBall
+            <com.kingsoft.zrefreshlayout.neteasy.NetEasyBall
                 android:id="@+id/myball"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
