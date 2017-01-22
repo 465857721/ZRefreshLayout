@@ -37,8 +37,10 @@ CommonHeadView为一个基本例子，可以自己实现IRefreshHeader接口来�
     void complete();
 
 # ScreenShots
+普通样子
 ![] (https://github.com/465857721/ZRefreshLayout/blob/master/ScreenShots/common.gif)
-![] (https://github.com/465857721/ZRefreshLayout/blob/master/ScreenShots/neteasy.gif)
+网易新闻
+![网易新闻] (https://github.com/465857721/ZRefreshLayout/blob/master/ScreenShots/neteasy.gif)
 # TODO
 写几个比较常用的样式
 
